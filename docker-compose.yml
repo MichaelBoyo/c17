@@ -24,8 +24,16 @@ services:
       PGADMIN_DEFAULT_EMAIL: hello@example.com
       PGADMIN_DEFAULT_PASSWORD: world
 
-
-
+  app:
+    build: .
+    image : springboot-example
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres_db
+    networks:
+      - local
+   
 
 
 networks:

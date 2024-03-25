@@ -2,7 +2,7 @@ version: '3.18'
 
 services:
 
-  db:
+  postgres_db:
     image: postgres:alpine
     restart: always
     ports:
@@ -10,6 +10,12 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USERNAME: postgres
+
+  
+  pg_admin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
 
 
 
